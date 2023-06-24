@@ -36,7 +36,6 @@
   - [404 Page](#404-page)
 - [Getting started](#getting-started)
 - [Features](#features)
-  - [Note: I wasn't able to display 12 results per page without losing data of a some characters due to Rick and Morty API doesn't support limit of results per page and it's not possible to retrieve all characters in one call.](#note-i-wasnt-able-to-display-12-results-per-page-without-losing-data-of-a-some-characters-due-to-rick-and-morty-api-doesnt-support-limit-of-results-per-page-and-its-not-possible-to-retrieve-all-characters-in-one-call)
 - [Tech stack](#tech-stack)
 - [Author](#author)
 
@@ -96,7 +95,7 @@ The app will be available at http://localhost:3000.
 - It was developed using NextJS 13.4, TypeScript and SASS
 - It has unit tests where I'm using Jest and Testing-Library
 
-### Note: I wasn't able to display 12 results per page without losing data of a some characters due to Rick and Morty API doesn't support limit of results per page and it's not possible to retrieve all characters in one call.
+- Note: I wasn't able to display 12 results per page without losing data of a some characters due to Rick and Morty API doesn't support limit of results per page and it's not possible to retrieve all characters in one call.
 
 ## Tech stack
 
