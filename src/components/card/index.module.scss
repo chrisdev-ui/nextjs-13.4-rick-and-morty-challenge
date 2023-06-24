@@ -1,0 +1,178 @@
+@import '@/styles/variables.module.scss';
+
+.card_wrapper {
+  position: relative;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background-color: $white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-height: 220px;
+
+  &_number {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 120px;
+    opacity: 0.2;
+    font-family: var(--font-ram), sans-serif;
+  }
+
+  &_image_container {
+    overflow: hidden;
+  }
+
+  &_image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.6s;
+    filter: brightness(0.9);
+
+    &:hover {
+      transform: scale(1.25);
+    }
+  }
+
+  &_body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+
+    &_name {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &_genderspecies {
+      display: flex;
+      gap: 0.2rem;
+    }
+
+    &_location,
+    &_origin {
+      display: flex;
+      flex-direction: column;
+
+      & span {
+        color: $secondary-text-color;
+      }
+
+      & div {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.dead,
+.alive,
+.unknown {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+
+  &_circles {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &_circle1 {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+    position: absolute;
+    display: inline-flex;
+    height: 0.75rem;
+    width: 0.75rem;
+    border-radius: 50%;
+    opacity: 0.75;
+  }
+
+  &_circle2 {
+    position: relative;
+    display: inline-flex;
+    border-radius: 50%;
+    height: 0.75rem;
+    width: 0.75rem;
+  }
+
+  &_status {
+    color: $white;
+  }
+}
+
+.dead {
+  &_circle1 {
+    background-color: $dead-400;
+  }
+
+  &_circle2 {
+    background-color: $dead-500;
+  }
+}
+
+.alive {
+  &_circle1 {
+    background-color: $alive-400;
+  }
+
+  &_circle2 {
+    background-color: $alive-500;
+  }
+}
+
+.unknown {
+  &_circle1 {
+    background-color: $unknown-400;
+  }
+
+  &_circle2 {
+    background-color: $unknown-500;
+  }
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    &_number {
+      display: block;
+    }
+    &_body {
+      &_name {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .card {
+    &_body {
+      &_name {
+        font-size: 28px;
+      }
+      &_location,
+      &_origin {
+        & div {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

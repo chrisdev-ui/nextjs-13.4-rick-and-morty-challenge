@@ -1,0 +1,68 @@
+@import '@/styles/variables.module.scss';
+
+.search_bar {
+  position: relative;
+  color: $text-search-color;
+}
+
+.search_bar input {
+  border-width: 2px;
+  border-color: $input-border-color;
+  background-color: $white;
+  height: 2.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  width: 25rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.search_btn {
+  position: absolute;
+  background-color: $primary-btn-color;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0.5rem;
+  border-radius: 99999px;
+  font-size: 14px;
+  color: $black;
+  width: 2rem;
+  height: 2rem;
+
+  & span {
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+    }
+
+    &::before {
+      border-radius: 50%;
+      box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+      top: -10px;
+      left: -10px;
+      width: 1.1em;
+      height: 1.1em;
+    }
+
+    &::after {
+      background: #f1f1f1;
+      border-radius: 0 0.25em 0.25em 0;
+      top: 0;
+      left: 0;
+      width: 0.75em;
+      height: 0.25em;
+      transform: translate(0.2em, 0) rotate(45deg);
+      transform-origin: 0 50%;
+    }
+  }
+}

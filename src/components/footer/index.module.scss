@@ -1,0 +1,14 @@
+@import '@/styles/variables.module.scss';
+
+.footer_container {
+  position: sticky;
+  background-color: $background-ram-color;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  color: $black;
+
+  & a {
+    text-decoration: none;
+  }
+}
